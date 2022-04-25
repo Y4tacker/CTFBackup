@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- serialkiller.conf -->
+<config>
+    <refresh>6000</refresh>
+    <mode>
+        <!-- set to 'false' for blocking mode -->
+        <profiling>false</profiling>
+    </mode>
+    <logging>
+        <enabled>false</enabled>
+    </logging>
+    <blacklist>
+        <!-- ysoserial's CommonsCollections1,3,5,6 payload  -->
+        <regexp>org\.apache\.commons\.collections\.Transformer$</regexp>
+        <regexp>org\.apache\.commons\.collections\.functors\.InvokerTransformer$</regexp>
+        <regexp>org\.apache\.commons\.collections\.functors\.ChainedTransformer$</regexp>
+        <regexp>org\.apache\.commons\.collections\.functors\.ConstantTransformer$</regexp>
+        <regexp>org\.apache\.commons\.collections\.functors\.InstantiateTransformer$</regexp>
+        <!-- ysoserial's CommonsCollections2,4 payload  -->
+        <regexp>org\.apache\.commons\.collections4\.functors\.InvokerTransformer$</regexp>
+        <regexp>org\.apache\.commons\.collections4\.functors\.ChainedTransformer$</regexp>
+        <regexp>org\.apache\.commons\.collections4\.functors\.ConstantTransformer$</regexp>
+        <regexp>org\.apache\.commons\.collections4\.functors\.InstantiateTransformer$</regexp>
+        <regexp>org\.apache\.commons\.collections4\.comparators\.TransformingComparator$</regexp>
+    </blacklist>
+    <whitelist>
+        <regexp>.*</regexp>
+    </whitelist>
+</config>
